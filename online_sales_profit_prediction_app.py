@@ -6,13 +6,11 @@ import pickle
 import kagglehub
 import os
 
-
-# Title of the app
+#Title
 st.markdown("""
-        <h1 style='text-align: center; font-size: 36px; font-weight: bold;'>US RETAIL PROFIT ANALYZER</h1>
-    """, unsafe_allow_html=True)
-
-st.markdown("### AI-Powered Forecasting Based on Key Parameters")
+    <h1 style='text-align: center; font-size: 36px; font-weight: bold;'>US RETAIL PROFIT ANALYZER</h1>
+    <h3 style='text-align: center; font-size: 20px; font-weight: normal;'>AI-Powered Forecasting Based on Key Parameters</h3>
+""", unsafe_allow_html=True)
 
 #Button Markdown
 
