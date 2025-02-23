@@ -9,8 +9,10 @@ import os
 
 # Title of the app
 st.markdown("""
-        <h1 style='text-align: center; font-size: 36px; font-weight: bold;'>US Retail Profit Analyzer</h1>
+        <h1 style='text-align: center; font-size: 36px; font-weight: bold;'>US RETAIL PROFIT ANALYZER</h1>
     """, unsafe_allow_html=True)
+
+st.markdown("### AI-Powered Forecasting Based on Key Parameters")
 
 #Button Markdown
 
