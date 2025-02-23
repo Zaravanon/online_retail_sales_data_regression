@@ -3,3 +3,12 @@ scikit-learn
 numpy
 pandas
 kagglehub
+matplotlib
+seaborn
+scipy
+statsmodels
+joblib
+optuna
+xgboost
+lightgbm
+catboost
