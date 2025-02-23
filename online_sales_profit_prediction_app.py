@@ -50,8 +50,14 @@ sub_category = st.selectbox("Sub-Category", [
 ])
 
 
-dataf = pd.read_csv(r'C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\Sample - Superstore.csv', encoding='latin1')
+#dataf = pd.read_csv(r'C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\Sample - Superstore.csv', encoding='latin1')
+path = kagglehub.dataset_download("vivek468/superstore-dataset-final")
 
+# Get the first CSV file from the downloaded path
+csv_files = [f for f in os.listdir(path) if f.endswith('.csv')]
+
+# Load the dataset with the correct encoding
+dataf = pd.read_csv(os.path.join(path, csv_files[0]), encoding="ISO-8859-1")  # Use 'latin1' if needed
 
 # Create a dictionary to map states to cities
 state_city_map = dataf.groupby('State')['City'].unique().to_dict()
