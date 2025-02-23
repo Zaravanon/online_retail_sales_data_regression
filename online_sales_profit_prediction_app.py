@@ -3,6 +3,8 @@ from sklearn.preprocessing import QuantileTransformer
 import numpy as np
 import pandas as pd
 import pickle
+import kagglehub
+
 
 # Title of the app
 st.markdown("""
