@@ -256,11 +256,11 @@ Discount = discount/100
 
 
 #Loading pickle
-with open(r"C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\online_sales_model.pkl", "rb") as file:
+with open(r"online_sales_model.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Load the trained Quantile Transformer used for profit target variable
-with open(r"C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\quantile_transformer_profit.pkl", "rb") as file:
+with open(r"quantile_transformer_profit.pkl", "rb") as file:
     qt_pro = pickle.load(file)  # Load the saved QuantileTransformer
 
 
