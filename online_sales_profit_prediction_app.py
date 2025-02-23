@@ -265,9 +265,9 @@ with open(r"quantile_transformer_profit.pkl", "rb") as file:
 
 
 
-loss_img = r"C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\loss_image.webp"  # Replace with the actual file path
-no_profit_img = r"C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\nuetral_image.webp"
-more_profit_img = r"C:\Users\Dell\OneDrive\Desktop\All Project Details\Retail_Sales_Data_Project_Files\profit_image.webp"
+loss_img = r"loss_image.webp"  # Replace with the actual file path
+no_profit_img = r"nuetral_image.webp"
+more_profit_img = r"profit_image.webp"
 
 
 if st.button("Predict"):
