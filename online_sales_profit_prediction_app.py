@@ -352,6 +352,8 @@ if st.session_state.predict_clicked:
 button_style += "</style>"
 st.markdown(button_style, unsafe_allow_html=True)
 
+if "click_count" not in st.session_state:
+    st.session_state.click_count = 0
 
-st.success("Prediction Successful!")  # Or replace this with your actual prediction logic
-    
+st.session_state.click_count += 1
+st.success(f"Prediction Successful! Clicked {st.session_state.click_count} times.")
