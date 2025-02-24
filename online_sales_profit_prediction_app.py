@@ -356,4 +356,4 @@ if "click_count" not in st.session_state:
     st.session_state.click_count = 0
 
 st.session_state.click_count += 1
-st.success(f"Prediction Successful! Clicked {st.session_state.click_count} times.")
+st.success(f"Clicked {st.session_state.click_count} times.")
