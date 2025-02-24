@@ -314,16 +314,26 @@ if st.button("Predict"):
         st.error("Our profits went on a world tour!")
         st.error(f"📉 Loss Incurred: ${abs(y_pred_original):.2f}")
 
-# Initialize session state for button click
-if "predict_clicked" not in st.session_state:
-    st.session_state.predict_clicked = False
+# File to store the click count
+CLICK_COUNT_FILE = "click_count.txt"
 
-# Function to update button state
-def on_predict():
-    st.session_state.predict_clicked = True
+# Function to read click count from the file
+def get_click_count():
+    if os.path.exists(CLICK_COUNT_FILE):
+        with open(CLICK_COUNT_FILE, "r") as file:
+            return int(file.read().strip())
+    return 0
 
+# Function to update click count in the file
+def update_click_count(new_count):
+    with open(CLICK_COUNT_FILE, "w") as file:
+        file.write(str(new_count))
 
-# Styling for Predict button
+# Initialize session state
+if "click_count" not in st.session_state:
+    st.session_state.click_count = get_click_count()
+
+# Styling for the Predict button
 button_style = """
     <style>
         .stButton>button {
@@ -339,21 +349,12 @@ button_style = """
         .stButton>button:hover {
             background-color: #ff6666; /* Lighter red-pink on hover */
         }
+    </style>
 """
-
-# If button is clicked, update styling dynamically
-if st.session_state.predict_clicked:
-    button_style += """
-        .stButton>button {
-            background-color: #4CAF50 !important; /* Green to indicate action */
-        }
-    """
-
-button_style += "</style>"
 st.markdown(button_style, unsafe_allow_html=True)
 
-if "click_count" not in st.session_state:
-    st.session_state.click_count = 0
-
-st.session_state.click_count += 1
-st.success(f"Clicked {st.session_state.click_count} times after recent update.")
+# Button Click Logic
+if st.button("Predict"):
+    st.session_state.click_count += 1
+    update_click_count(st.session_state.click_count)
+    st.success(f"Clicked {st.session_state.click_count} times across all users after recent update.")
