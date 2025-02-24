@@ -302,17 +302,17 @@ if st.button("Predict"):
     if y_pred_original > 30:
         st.image(more_profit_img, caption="Good Profit", use_container_width =True)
         st.success("So much cash, need a money tub!")
-        st.success(f"✅ Profit Generated: ₹{"{:.2f}".format(y_pred_original)}")
+        st.success(f"✅ Profit Generated: ${"{:.2f}".format(y_pred_original)}")
 
     elif y_pred_original > 0 and y_pred_original <= 30:
         st.image(no_profit_img, caption="Not a good profit", use_container_width =True)
         st.warning("Steady profits, but no Ferrari yet!")
-        st.info(f"⚖️ Not a good Profit, No Loss – Generated: ₹{"{:.2f}".format(y_pred_original)}")
+        st.info(f"⚖️ Not a good Profit, No Loss – Generated: ${"{:.2f}".format(y_pred_original)}")
 
     else:
         st.image(loss_img, caption="Financial Loss", use_container_width =True)
         st.error("Our profits went on a world tour!")
-        st.error(f"📉 Loss Incurred: ₹{abs(y_pred_original):.2f}")
+        st.error(f"📉 Loss Incurred: ${abs(y_pred_original):.2f}")
 
 
     
