@@ -357,5 +357,5 @@ st.markdown(button_style, unsafe_allow_html=True)
 
 st.session_state.click_count += 1
 update_click_count(st.session_state.click_count)
-st.success(f" 📊 Clicked {st.session_state.click_count} times across all users after an recent update.")
+st.success(f" 📊 Clicked {st.session_state.click_count} times across all users after a recent update.")
     
