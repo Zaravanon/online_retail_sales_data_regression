@@ -355,8 +355,7 @@ button_style = """
 """
 st.markdown(button_style, unsafe_allow_html=True)
 
-# Button Click Logic
-if st.button("Predict"):
-    st.session_state.click_count += 1
-    update_click_count(st.session_state.click_count)
-    st.success(f"Clicked {st.session_state.click_count} times across all users.")
+st.session_state.click_count += 1
+update_click_count(st.session_state.click_count)
+st.success(f"Clicked {st.session_state.click_count} times across all users after an recent update.")
+    
