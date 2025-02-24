@@ -321,8 +321,10 @@ CLICK_COUNT_FILE = "click_count.txt"
 def get_click_count():
     if os.path.exists(CLICK_COUNT_FILE):
         with open(CLICK_COUNT_FILE, "r") as file:
-            return int(file.read().strip())
-    return 0
+            content = file.read().strip()
+            if content.isdigit():  # Ensure valid integer data
+                return int(content)
+    return 0  # Return 0 if file is empty or has invalid content
 
 # Function to update click count in the file
 def update_click_count(new_count):
@@ -333,7 +335,7 @@ def update_click_count(new_count):
 if "click_count" not in st.session_state:
     st.session_state.click_count = get_click_count()
 
-# Styling for the Predict button
+# Styling for Predict button
 button_style = """
     <style>
         .stButton>button {
@@ -357,4 +359,4 @@ st.markdown(button_style, unsafe_allow_html=True)
 if st.button("Predict"):
     st.session_state.click_count += 1
     update_click_count(st.session_state.click_count)
-    st.success(f"Clicked {st.session_state.click_count} times across all users after recent update.")
+    st.success(f"Clicked {st.session_state.click_count} times across all users.")
