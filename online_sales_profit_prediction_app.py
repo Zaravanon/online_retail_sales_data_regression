@@ -314,26 +314,26 @@ if st.button("Predict"):
         st.error("Our profits went on a world tour!")
         st.error(f"📉 Loss Incurred: ${abs(y_pred_original):.2f}")
 
-# Initialize click count
 if 'click_count' not in st.session_state:
     st.session_state.click_count = 0
 
-# Button to increment count
-if st.button("Click Me"):
+# When the Predict button is clicked
+if st.button("🚀 Predict"):
     st.session_state.click_count += 1
+    # Your prediction logic here...
 
-# Display click count with styled markdown
+# Display styled click count
 st.markdown(
     f"""
     <div style="
-        background-color: #4CAF50; 
+        background-color: #FF5733; 
         color: white; 
         padding: 10px; 
         border-radius: 10px; 
         text-align: center; 
         font-size: 24px; 
         font-weight: bold;">
-        🚀 Button clicked {st.session_state.click_count} times! 🎉
+        🔥 Predict button clicked {st.session_state.click_count} times! 🚀
     </div>
     """,
     unsafe_allow_html=True
