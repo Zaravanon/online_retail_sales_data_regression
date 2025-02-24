@@ -314,28 +314,50 @@ if st.button("Predict"):
         st.error("Our profits went on a world tour!")
         st.error(f"📉 Loss Incurred: ${abs(y_pred_original):.2f}")
 
-if 'click_count' not in st.session_state:
-    st.session_state.click_count = 0
+# Initialize session state for button click
+if "predict_clicked" not in st.session_state:
+    st.session_state.predict_clicked = False
 
-# When the Predict button is clicked
-if st.button("🚀 Predict"):
-    st.session_state.click_count += 1
-    # Your prediction logic here...
+# Function to update button state
+def on_predict():
+    st.session_state.predict_clicked = True
 
-# Display styled click count
-st.markdown(
-    f"""
-    <div style="
-        background-color: #FF5733; 
-        color: white; 
-        padding: 10px; 
-        border-radius: 10px; 
-        text-align: center; 
-        font-size: 24px; 
-        font-weight: bold;">
-        🔥 Predict button clicked {st.session_state.click_count} times! 🚀
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# Title
+st.markdown("""
+    <h1 style='text-align: center; font-size: 36px; font-weight: bold;'>US RETAIL PROFIT ANALYZER</h1>
+    <h3 style='text-align: center; font-size: 20px; font-weight: normal;'>AI-Powered Forecasting Based on Key Parameters</h3>
+""", unsafe_allow_html=True)
+
+# Styling for Predict button
+button_style = """
+    <style>
+        .stButton>button {
+            background-color: #ff4b4b; /* Default Red-Pink */
+            color: white;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .stButton>button:hover {
+            background-color: #ff6666; /* Lighter red-pink on hover */
+        }
+"""
+
+# If button is clicked, update styling dynamically
+if st.session_state.predict_clicked:
+    button_style += """
+        .stButton>button {
+            background-color: #4CAF50 !important; /* Green to indicate action */
+        }
+    """
+
+button_style += "</style>"
+st.markdown(button_style, unsafe_allow_html=True)
+
+# Predict button
+if st.button("Predict", on_click=on_predict):
+    st.success("Prediction Successful!")  # Or replace this with your actual prediction logic
     
