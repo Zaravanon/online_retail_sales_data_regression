@@ -357,7 +357,6 @@ if st.session_state.predict_clicked:
 button_style += "</style>"
 st.markdown(button_style, unsafe_allow_html=True)
 
-# Predict button
-if st.button("Predict", on_click=on_predict):
-    st.success("Prediction Successful!")  # Or replace this with your actual prediction logic
+
+st.success("Prediction Successful!")  # Or replace this with your actual prediction logic
     
